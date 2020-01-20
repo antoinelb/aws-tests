@@ -17,7 +17,7 @@ def app(init_config) -> Iterator[Starlette]:  # pylint: disable=unused-argument
 
 
 @pytest.fixture
-def client(app, event_loop) -> Iterator[TestClient]:
+def client(app) -> Iterator[TestClient]:
     yield TestClient(app)
 
 
