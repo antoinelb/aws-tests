@@ -1,0 +1,19 @@
+Resources:
+  WebServer:
+    Type: AWS::EC2::Instance
+    Properties:
+        InstanceType: t2.micro
+      SecurityGroups:
+        - Ref: WebServerSecurityGroup
+  WebServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Proporties:
+      SecurityGroupIngress:
+        - CidrIp: 0.0.0.0/0
+          FromPort: '80'
+          IpProtocol: tcp
+          ToPort: '80'
+        - CidrIp: 0.0.0.0/0
+          FromPort: '443'
+          IpProtocol: tcp
+          ToPort: '443'

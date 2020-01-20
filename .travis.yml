@@ -34,3 +34,11 @@ jobs:
     - stage: Tests
       name: "pytest"
       script: pytest --cov --reruns 3
+    - stage: Deployment
+      deploy:
+        provider: cloudformation
+        access_key_id: ${ACCESS_KEY_ID}
+        secret_access_key: ${SECRET_ACCESS_KEY}
+        template: deploy/aws.yml
+        stack_name: test
+        edge: true
