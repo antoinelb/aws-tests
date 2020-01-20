@@ -13,28 +13,29 @@ install:
 script:
 jobs:
   include:
-    - stage: Tests
-      name: "bandit"
-      script: bandit -r aws
-    - stage: Tests
-      name: "black" 
-      script: black --check aws tests
-    - stage: Tests
-      name: "flake8"
-      script: flake8 --statistics aws tests
-    - stage: Tests
-      name: "mypy"
-      script: mypy aws tests
-    - stage: Tests
-      name: "pylint"
-      script: pylint aws tests
-    - stage: Tests
-      name: "safety"
-      script: safety check
-    - stage: Tests
-      name: "pytest"
-      script: pytest --cov --reruns 3
+    # - stage: Tests
+      # name: "bandit"
+      # script: bandit -r aws
+    # - stage: Tests
+      # name: "black"
+      # script: black --check aws tests
+    # - stage: Tests
+      # name: "flake8"
+      # script: flake8 --statistics aws tests
+    # - stage: Tests
+      # name: "mypy"
+      # script: mypy aws tests
+    # - stage: Tests
+      # name: "pylint"
+      # script: pylint aws tests
+    # - stage: Tests
+      # name: "safety"
+      # script: safety check
+    # - stage: Tests
+      # name: "pytest"
+      # script: pytest --cov --reruns 3
     - stage: Deployment
+      name: "aws"
       deploy:
         provider: cloudformation
         access_key_id: ${ACCESS_KEY_ID}
