@@ -25,6 +25,7 @@ safety = "^1.8.5"
 pytest-mock = "^2.0.0"
 async-asgi-testclient = "^1.4.0"
 pytest-asyncio = "^0.10.0"
+pytest-rerunfailures = "^8.0"
 
 [tool.poetry.scripts]
 aws = "aws.cli:run"
