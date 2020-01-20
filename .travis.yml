@@ -5,10 +5,8 @@ env:
   global:
     - HOST=127.0.0.1
     - PORT=8080
-before_install:
-  - pip install poetry
-  - poetry install
 install:
+  - pip install poetry
   - python -m venv venv
   - . venv/bin/activate
   - poetry install
