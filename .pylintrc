@@ -1,0 +1,31 @@
+[MESSAGES CONTROL]
+extension-pkg-whitelist=
+  ujson
+disable=
+  arguments-differ,
+  bad-continuation,
+  broad-except,
+  invalid-name,
+  logging-format-interpolation,
+  missing-docstring,
+  no-else-return,
+  no-init,
+  no-member,
+  no-method-argument,
+  no-value-for-parameter,
+  old-style-class,
+  protected-access,
+  redefined-outer-name,
+  too-few-public-methods,
+  too-many-arguments,
+  ungrouped-imports,
+  unused-wildcard-import,
+  wildcard-import
+ignore=
+  migrations
+
+[SIMILARITIES]
+min-similarity-lines=20
+ignore-comments=yes
+ignore-docstrings=yes
+ignore-imports=no

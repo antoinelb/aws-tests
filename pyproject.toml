@@ -1,0 +1,34 @@
+[tool.poetry]
+name = "aws"
+version = "0.1.0"
+description = ""
+authors = ["Antoine Lefebvre-Brossard <antoinelb@protonmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+jinja2 = "^2.10.3"
+python-dotenv = "^0.10.5"
+starlette = "^0.13.0"
+uvicorn = "^0.11.2"
+
+[tool.poetry.dev-dependencies]
+black = {version = "^19.10b0", allow-prereleases = true}
+flake8 = "^3.7.9"
+mypy = "^0.761"
+pylint = "^2.4.4"
+bandit = "^1.6.2"
+flake8-bugbear = "^20.1.2"
+isort = "^4.3.21"
+pytest = "^5.3.4"
+pytest-cov = "^2.8.1"
+safety = "^1.8.5"
+
+[tool.poetry.scripts]
+aws = "aws.cli:run"
+
+[tool.black]
+line_length = 79
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
