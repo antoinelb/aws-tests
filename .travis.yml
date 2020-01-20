@@ -7,11 +7,9 @@ env:
     - PORT=8080
 before_install:
   - pip install poetry
+  - poetry config virutalenvs.in-project true
 install:
-  - |
-    python -m venv venv
-    . venv/bin/activate
-    poetry install
+  - poetry install
 script:
 jobs:
   include:
