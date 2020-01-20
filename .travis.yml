@@ -1,0 +1,31 @@
+language: python
+python:
+  - "3.8"
+env:
+  global:
+    - HOST=127.0.0.1
+    - PORT=8080
+before_install:
+  - pip install poetry
+install:
+  - python -m venv venv
+  - . venv/bin/activate
+  - poetry install
+script:
+jobs:
+  include:
+    - stage: Testing
+      name: bandit
+      script: bandit -r aws
+    - name: black 
+      script: black --check aws tests
+    - name: flake8
+      script: flake8 --statistics aws tests
+    - name: mypy
+      script: mypy aws tests
+    - name: pylint
+      script: pylint aws tests
+    - name: safety
+      script: safety check
+    - name: pytest
+      script: pytest --cov --reruns 3
